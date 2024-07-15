@@ -2,6 +2,29 @@ import React from "react";
 import img from "../assets/Logo.png";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+
+const menus = [
+  {
+    lable: "Home",
+    path: "/",
+  },
+  {
+    lable: "Teacher",
+    path: "/teacher",
+  },
+  {
+    lable: "Holiday",
+    path: "/holiday",
+  },
+  {
+    lable: "Contact Us",
+    path: "/contact",
+  },
+  {
+    lable: "Login",
+    path: "/login",
+  },
+];
 const Navbar = () => {
   return (
     <nav
@@ -29,111 +52,28 @@ const Navbar = () => {
       <ul
         style={{
           listStyle: "none",
-          padding: "0",
-          margin: "0",
+          alignItems: "center",
           display: "flex",
+          gap: 32,
         }}
       >
-        <li
-          style={{
-            display: "flex",
-            alignItems: "center",
-            padding: "16px 24px",
-          }}
-        >
-          <Link
-            to="/"
-            style={{
-              textDecoration: "none",
-              color: "#323232",
-              fontWeight: "600",
-              fontSize: "17px",
-              transition: "color 0.3s ease",
-            }}
-          >
-            Home
-          </Link>
-        </li>
-        <li
-          style={{
-            display: "flex",
-            alignItems: "center",
-            padding: "16px 24px",
-          }}
-        >
-          <Link
-            to="/teacher"
-            style={{
-              textDecoration: "none",
-              color: "#323232",
-              fontWeight: "600",
-              fontSize: 17,
-            }}
-          >
-            Teacher
-          </Link>
-        </li>
-        <li
-          style={{
-            display: "flex",
-            alignItems: "center",
-            padding: "16px 24px",
-          }}
-        >
-          <Link
-            to="/holiday"
-            style={{
-              textDecoration: "none",
-              color: "#323232",
-              fontWeight: "600",
-              fontSize: 17,
-            }}
-          >
-            Holiday
-          </Link>
-        </li>
-        <li
-          style={{
-            display: "flex",
-            alignItems: "center",
-            padding: "16px 24px",
-          }}
-        >
-          <Link
-            to="/contact"
-            style={{
-              textDecoration: "none",
-              color: "#323232",
-              fontWeight: "600",
-              fontSize: 17,
-            }}
-          >
-            Contacts
-          </Link>
-        </li>
-        <li
-          style={{
-            display: "flex",
-            alignItems: "center",
-            padding: "16px 24px",
-          }}
-        >
-          <Link
-            to="/login"
-            style={{
-              textDecoration: "none",
-              color: "white",
-              fontWeight: "600",
-              fontSize: 17,
-              background: "dodgerblue",
-              padding: "16px 48px",
-              borderRadius: "8px",
-            }}
-            className="TalkToUs"
-          >
-            Talk to Us
-          </Link>
-        </li>
+        {menus.map((menu, index) => {
+          return (
+            <li key={index}>
+              <Link
+                to={menu.path}
+                style={{
+                  textDecoration: "none",
+                  color: "#323232",
+                  fontWeight: "600",
+                  fontSize: 17,
+                }}
+              >
+                {menu.lable}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

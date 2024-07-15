@@ -158,7 +158,10 @@ const Footer = () => {
                   textDecoration: "none",
                 }}
               >
-                <i class="ri-linkedin-box-fill" style={{ marginRight: 6 }}></i>
+                <i
+                  className="ri-linkedin-box-fill"
+                  style={{ marginRight: 6 }}
+                ></i>
                 Linkedin
               </Link>
             </li>
