@@ -1,3 +1,4 @@
+import "animate.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PageNotFound from "./Pages/PageNotFound";
 import Home from "./Pages/Home";

@@ -28,6 +28,7 @@ const menus = [
 const Navbar = () => {
   return (
     <nav
+      className="sticky top-0 left-0 z-50"
       style={{
         background: "white",
         display: "flex",
@@ -46,7 +47,7 @@ const Navbar = () => {
       >
         <img src={img} width="60" style={{ borderRadius: "10px" }} />
 
-        <h1>MySchool</h1>
+        <h1 className="text-2xl font-semibold">MySchool</h1>
       </div>
 
       <ul

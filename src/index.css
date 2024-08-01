@@ -1,4 +1,4 @@
-::-webkit-scrollbar{
+/* ::-webkit-scrollbar{
   width:10px
 }
 
@@ -10,4 +10,8 @@ background:#F38E1E;
   background: #3f3e30;
 }
 
-li {list-style-type: none}
+li {list-style-type: none} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
