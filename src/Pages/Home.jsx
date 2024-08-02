@@ -1,26 +1,24 @@
 import React, { useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import img from "../assets/teacher2.jpg";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 import "swiper/css";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import img from "../assets/teacher2.jpg";
+
 import img1 from "../assets/Designer.png";
-// import img2 from "../assets/Designer1";
-// import img3 from "../assets/Designer2";
-// import img4 from "../assets/Designer3";
-// import img5 from "../assets/Designer4";
-// import img6 from "../assets/Designer5";
+import img2 from "../assets/Designer1.png";
+import img3 from "../assets/Designer2.png";
+import img4 from "../assets/Designer3.png";
+import img5 from "../assets/Designer4.png";
+import img6 from "../assets/Designer5.png";
+import img7 from "../assets/Designer6.png";
+import img8 from "../assets/Designer7.png";
+import img9 from "../assets/Designer8.png";
 
 const Home = () => {
-  const progressCircle = useRef(null);
-  const progressContent = useRef(null);
-  const onAutoplayTimeLeft = (s, time, progress) => {
-    progressCircle.current.style.setProperty("--progress", 1 - progress);
-    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-  };
   return (
     <>
       <Navbar />
@@ -35,18 +33,16 @@ const Home = () => {
           </div>
           <div className="flex flex-col gap-8 justify-center">
             <h1 className="text-7xl font-bold text-white">
-              " Say Hello! My School Managment.{" "}
+              " Say Hello! My School Managment.
             </h1>
             <p className="text-xl font-semibold ">
-              Enjoy full online learning experinace with Myschool by Imran Patel{" "}
+              Enjoy full online learning experinace with Myschool by Imran Patel
             </p>
             <div className="flex gap-4">
               <button className="bg-[#100d22] text-white px-12 py-2 rounded-lg text-lg font-semibold hover:bg-orange-600">
-                {" "}
                 Learn More
               </button>
               <button className="border border-2 border-[#100d22] text-[#100d22] px-12 py-2 rounded-lg text-lg font-semibold">
-                {" "}
                 Watch Video
               </button>
             </div>
@@ -89,48 +85,60 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-        <div className="p-24 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-          <h1 className="text-center text-4xl font-bold">Compus Portfolio</h1>
-          <p className="text-white text-center mt-4 text-lg ">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum sit
-            eos explicabo nesciunt distinctio? Perferendis nulla, ipsum corporis
-            error voluptatem aliquid et consequatur culpa voluptatibus
-            aspernatur quos asperiores iste dolorem.
-          </p>
-
+        <div className="grid grid-cols-2 p-24">
           <div>
             <Swiper
-              spaceBetween={30}
-              centeredSlides={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
               navigation={true}
-              modules={[Autoplay, Pagination, Navigation]}
-              onAutoplayTimeLeft={onAutoplayTimeLeft}
-              className="mySwiper"
+              modules={[Navigation]}
+              className="w-8/12 rounded-2xl shadow-xl shadow-orange-600"
             >
-              <SwiperSlide>{img1}</SwiperSlide>
-              {/* <SwiperSlide>{img2}</SwiperSlide>
-              <SwiperSlide>{img3}</SwiperSlide>
-              <SwiperSlide>{img4}</SwiperSlide>
-              <SwiperSlide>{img5}</SwiperSlide>
-              <SwiperSlide>{img6}</SwiperSlide> */}
-              {/* <SwiperSlide>{img7}</SwiperSlide>
-              <SwiperSlide>{img8}</SwiperSlide>
-              <SwiperSlide>{img9}</SwiperSlide> */}
-
-              <div className="autoplay-progress" slot="container-end">
-                <svg viewBox="" ref={progressCircle}></svg>
-
-                <span ref={progressContent}></span>
-              </div>
+              <SwiperSlide>
+                <img src={img1} alt="" className="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={img2} alt="" className="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={img3} alt="" className="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={img4} alt="" className="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={img5} alt="" className="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={img6} alt="" className="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={img7} alt="" className="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={img8} alt="" className="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={img9} alt="" className="" />
+              </SwiperSlide>
             </Swiper>
+            ;
+          </div>
+          <div className="flex flex-col gap-8 justify-center">
+            <h1 className="text-7xl font-bold text-orange-600">
+              " The best way to predict the future is to create it .
+            </h1>
+            <p className="text-xl font-semibold ">
+              Prospective parents and their children – who require information
+              about the school, pastoral care, exam results, admission
+              procedures, open days.
+            </p>
+            <div className="flex gap-4">
+              <button className="bg-[#100d22] text-white px-12 py-2 rounded-lg text-lg font-semibold hover:bg-orange-600">
+                Learn More
+              </button>
+              <button className="border border-2 border-[#100d22] text-[#100d22] px-12 py-2 rounded-lg text-lg font-semibold">
+                Watch Video
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -140,3 +148,14 @@ const Home = () => {
 };
 
 export default Home;
+
+// <div className="p-24 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+// <h1 className="text-center text-4xl font-bold">Compus Portfolio</h1>
+// <p className="text-white text-center mt-4 text-lg ">
+//   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum sit
+//   eos explicabo nesciunt distinctio? Perferendis nulla, ipsum corporis
+//   error voluptatem aliquid et consequatur culpa voluptatibus
+//   aspernatur quos asperiores iste dolorem.
+// </p>
+
+// </div>
