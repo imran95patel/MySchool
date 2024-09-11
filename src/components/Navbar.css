@@ -1,5 +1,69 @@
-.TalkToUs:hover{
-  background: red !important;
+/* Navbar.css */
 
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px; /* Adjusted padding */
+  box-shadow: 0 16px 8px 0 rgba(0, 0, 0, 0.1);
+}
 
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-toggler {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #323232;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px; /* Adjust based on the height of your Navbar */
+    left: 0;
+    background: white;
+    box-shadow: 0 16px 8px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-menu.open {
+    display: flex;
+  }
+
+  .navbar-link {
+    padding: 15px;
+    text-align: center;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
 }

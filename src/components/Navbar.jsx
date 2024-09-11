@@ -1,80 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import img from "../assets/Logo.png";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const menus = [
-  {
-    lable: "Home",
-    path: "/",
-  },
-  {
-    lable: "Teacher",
-    path: "/teacher",
-  },
-  {
-    lable: "Holiday",
-    path: "/holiday",
-  },
-  {
-    lable: "Contact Us",
-    path: "/contact",
-  },
-  {
-    lable: "Login",
-    path: "/login",
-  },
+  { label: "Home", path: "/" },
+  { label: "Teacher", path: "/teacher" },
+  { label: "Holiday", path: "/holiday" },
+  { label: "Contact Us", path: "/contact" },
+  { label: "Login", path: "/login" },
 ];
+
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <nav
-      className="sticky top-0 left-0 z-50"
-      style={{
-        background: "white",
-        display: "flex",
-        justifyContent: "space-between",
-        padding: "0 48px",
-        boxShadow: "0 16px 8px 0 rgba(0,0,0,0.1)",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "8px",
-          justifyContent: "space-between",
-        }}
-      >
-        <img src={img} width="60" style={{ borderRadius: "10px" }} />
-
-        <h1 className="text-2xl font-semibold">MySchool</h1>
+    <nav className="navbar">
+      <div className="navbar-brand">
+        <img src={img} alt="Logo" width="60" />
+        <h1>MySchool</h1>
       </div>
-
+      <button className="navbar-toggler" onClick={toggleMenu}>
+        <span className="navbar-toggler-icon">&#9776;</span>
+      </button>
       <ul
-        style={{
-          listStyle: "none",
-          alignItems: "center",
-          display: "flex",
-          gap: 32,
-        }}
+        className={`navbar-menu ${isOpen ? "open" : ""}`}
+        style={{ paddingBottom: "20px" }}
       >
-        {menus.map((menu, index) => {
-          return (
-            <li key={index}>
-              <Link
-                to={menu.path}
-                style={{
-                  textDecoration: "none",
-                  color: "#323232",
-                  fontWeight: "600",
-                  fontSize: 17,
-                }}
-              >
-                {menu.lable}
-              </Link>
-            </li>
-          );
-        })}
+        {menus.map((menu, index) => (
+          <li key={index}>
+            <Link to={menu.path} className="navbar-link">
+              {menu.label}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

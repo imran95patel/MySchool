@@ -26,7 +26,7 @@ const Holiday = () => {
     },
     {
       title: "Thanksgiving Break",
-      duration: "1 weeks",
+      duration: "1 week",
       date: "November 15 - December 10",
     },
     {
@@ -35,39 +35,34 @@ const Holiday = () => {
       date: "October 31 - November 1",
     },
   ];
+
   return (
     <div>
       <Navbar />
-      <div style={{ width: "60%", margin: "0 auto", padding: "64px 0" }}>
-        <h1 style={{ textAlign: "center" }}>Your Holidays</h1>
-        <table width="100%">
-          <thead>
-            <tr style={{ background: "#ddd" }}>
-              <th style={{ padding: 14 }}>S/No</th>
-              <th>Title</th>
-              <th>Duration</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            {holidays.map((item, index) => (
-              <tr key={index} style={{ textAlign: "center" }}>
-                <td style={{ padding: 14, borderBottom: "1px solid #ddd" }}>
-                  {index + 1}
-                </td>
-                <td style={{ padding: 14, borderBottom: "1px solid #ddd" }}>
-                  {item.title}
-                </td>
-                <td style={{ padding: 14, borderBottom: "1px solid #ddd" }}>
-                  {item.duration}
-                </td>
-                <td style={{ padding: 14, borderBottom: "1px solid #ddd" }}>
-                  {item.date}
-                </td>
+      <div className="px-4 py-8 md:px-8 lg:px-16">
+        <h1 className="text-3xl font-bold text-center mb-6">Your Holidays</h1>
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="px-4 py-2 text-left">S/No</th>
+                <th className="px-4 py-2 text-left">Title</th>
+                <th className="px-4 py-2 text-left">Duration</th>
+                <th className="px-4 py-2 text-left">Date</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {holidays.map((item, index) => (
+                <tr key={index}>
+                  <td className="px-4 py-2 text-center">{index + 1}</td>
+                  <td className="px-4 py-2">{item.title}</td>
+                  <td className="px-4 py-2">{item.duration}</td>
+                  <td className="px-4 py-2">{item.date}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
       <Footer />
     </div>

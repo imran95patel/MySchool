@@ -14,7 +14,7 @@ const ContactUs = () => {
     console.log(fullName, email, message);
     Swal.fire({
       icon: "success",
-      title: "success ",
+      title: "Success",
       text: "Your message has been sent successfully!",
       confirmButtonText: "OK",
     });
@@ -23,88 +23,54 @@ const ContactUs = () => {
   return (
     <>
       <Navbar />
-      <div style={{ display: "flex", padding: "64px" }}>
-        <img src={img} alt="" width="50%" />
-        <div style={{ width: "50%" }}>
+      <div className="flex flex-col md:flex-row p-8 md:p-16">
+        <div className="flex-1">
+          <img src={img} alt="Contact Us" className="w-full h-auto" />
+        </div>
+        <div className="flex-1 flex items-center justify-center">
           <form
             onSubmit={contactUs}
-            action=""
-            style={{ display: "flex", flexDirection: "column", gap: 24 }}
+            className="w-full max-w-lg flex flex-col gap-6"
           >
-            <div
-              style={{ display: "flex", flexDirection: "column", gap: "8px" }}
-            >
-              <label style={{ fontSize: "18px", fontWeight: 500 }}>
-                Full Name
-              </label>
+            <div className="flex flex-col gap-2">
+              <label className="text-lg font-medium">Full Name</label>
               <input
-                onChange={(e) => {
-                  setFullname(e.target.value);
-                }}
+                onChange={(e) => setFullname(e.target.value)}
                 required
                 type="text"
                 name="fullname"
                 placeholder="Enter Your name"
-                style={{
-                  border: "1px solid #ccc",
-                  borderRadius: 4,
-                  padding: 14,
-                }}
+                className="border border-gray-300 rounded-lg p-3"
               />
             </div>
 
-            <div
-              style={{ display: "flex", flexDirection: "column", gap: "8px" }}
-            >
-              <label style={{ fontSize: "18px", fontWeight: 500 }}>Email</label>
+            <div className="flex flex-col gap-2">
+              <label className="text-lg font-medium">Email</label>
               <input
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
+                onChange={(e) => setEmail(e.target.value)}
                 required
                 type="email"
                 name="email"
                 placeholder="example@example.com"
-                style={{
-                  border: "1px solid #ccc",
-                  borderRadius: 4,
-                  padding: 14,
-                }}
+                className="border border-gray-300 rounded-lg p-3"
               />
             </div>
 
-            <div
-              style={{ display: "flex", flexDirection: "column", gap: "8px" }}
-            >
-              <label style={{ fontSize: "18px", fontWeight: 500 }}>
-                Massage
-              </label>
+            <div className="flex flex-col gap-2">
+              <label className="text-lg font-medium">Message</label>
               <textarea
                 onChange={(e) => setMessage(e.target.value)}
                 required
-                type="text"
-                name="Massage"
-                placeholder="Write Your Query or Massage here"
+                name="message"
+                placeholder="Write your query or message here"
                 rows={4}
-                style={{
-                  border: "1px solid #ccc",
-                  borderRadius: 4,
-                  padding: 14,
-                }}
+                className="border border-gray-300 rounded-lg p-3"
               />
             </div>
 
             <button
-              style={{
-                border: "none",
-                width: "fit-content",
-                padding: "14px 34px ",
-                borderRadius: 6,
-                color: "white",
-                background: "#6c63ff",
-                cursor: "pointer",
-                fontWeight: 600,
-              }}
+              type="submit"
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
             >
               Submit
             </button>

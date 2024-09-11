@@ -3,223 +3,127 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <>
-      <footer
-        style={{
-          padding: "60px 100px",
-          backgroundColor: "#03011c",
-          display: "flex",
-          gap: 48,
-        }}
-      >
-        <div style={{ width: "100%" }}>
-          <h2 style={{ color: "#f5f5f5", fontWeight: 500 }}>MySchool</h2>
-          <p style={{ color: "white" }}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-            molestias rerum beatae quaerat dolorum praesentium harum itaque
-            possimus dolore doloremque.
-          </p>
-        </div>
-        <div style={{ width: "100%" }}>
-          <h2 style={{ color: "#f5f5f5", fontWeight: 500 }}>User Link</h2>
-          <ul
-            style={{
-              padding: 0,
-              margin: 0,
-              display: "flex ",
-              flexDirection: "column",
-              gap: 12,
-            }}
-          >
-            <li>
-              <Link
-                to="/"
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                  listStyleType: "none",
-                }}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/teacher"
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                  listStyleType: "none",
-                }}
-              >
-                Teachers
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/holiday"
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                  listStyleType: "none",
-                }}
-              >
-                Holidays
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/contact"
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                  listStyleType: "none",
-                }}
-              >
-                Contacts
-              </Link>
-            </li>
-            <li style={{ width: "100px" }}>
-              <Link
-                to="/login"
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                }}
-              >
-                Talk to us
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div style={{ width: "100%" }}>
-          <h2
-            style={{
-              color: "#f5f5f5",
-              fontWeight: 500,
-              width: "120px",
-            }}
-          >
-            Social Link
-          </h2>
-          <ul
-            style={{
-              padding: 0,
-              margin: 0,
-              display: "flex ",
-              flexDirection: "column",
-              gap: 12,
-            }}
-          >
-            <li>
-              <Link
-                to="https://www.youtube.com"
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                }}
-              >
-                <i className="ri-youtube-fill" style={{ marginRight: 6 }}></i>
-                Youtube
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="https://www.facebook.com/"
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                }}
-              >
-                <i
-                  className="ri-facebook-circle-fill"
-                  style={{ marginRight: 6 }}
-                ></i>
-                Facebook
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="https://www.instagram.com"
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                }}
-              >
-                <i className="ri-instagram-fill" style={{ marginRight: 6 }}></i>
-                Instagram
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="www.linkedin.com/in/imran-patel83"
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                }}
-              >
-                <i
-                  className="ri-linkedin-box-fill"
-                  style={{ marginRight: 6 }}
-                ></i>
-                Linkedin
-              </Link>
-            </li>
-            <li style={{ width: "100px" }}>
-              <Link
-                to="https://github.com/imran95patel"
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                }}
-              >
-                <i className="ri-github-fill" style={{ marginRight: 6 }}></i>
-                GitHub
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div style={{ width: "100%" }}>
-          <h2 style={{ color: "#f5f5f5", fontWeight: 500 }}>Enquery</h2>
-          <form style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-            <input
-              name="full name"
-              placeholder="Full Name"
-              type="text"
-              required
-              style={{ border: "none", padding: 12, borderRadius: "10px" }}
-            />
-            <input
-              name="email"
-              placeholder="example@example.com"
-              type="email"
-              required
-              style={{ border: "none", padding: 12, borderRadius: "10px" }}
-            />
-            <textarea
-              name="massage"
-              placeholder="Massage"
-              required
-              style={{ border: "none", padding: 12, borderRadius: "10px" }}
-            />
-            <button
-              style={{
-                width: "fit-content",
-                border: "none",
-                background: "green",
-                color: "white",
-                padding: "12px 24px",
-                borderRadius: "10px",
-                cursor: "pointer",
-                transition: "background 0.3s ease",
-              }}
+    <footer className="bg-[#03011c] p-8 md:p-16 flex flex-col md:flex-row gap-12">
+      <div className="flex-1">
+        <h2 className="text-white font-medium">MySchool</h2>
+        <p className="text-white mt-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+          molestias rerum beatae quaerat dolorum praesentium harum itaque
+          possimus dolore doloremque.
+        </p>
+      </div>
+      <div className="flex-1">
+        <h2 className="text-white font-medium">User Link</h2>
+        <ul className="list-none p-0 mt-4">
+          <li className="mb-2">
+            <Link to="/" className="text-white hover:underline">
+              Home
+            </Link>
+          </li>
+          <li className="mb-2">
+            <Link to="/teacher" className="text-white hover:underline">
+              Teachers
+            </Link>
+          </li>
+          <li className="mb-2">
+            <Link to="/holiday" className="text-white hover:underline">
+              Holidays
+            </Link>
+          </li>
+          <li className="mb-2">
+            <Link to="/contact" className="text-white hover:underline">
+              Contacts
+            </Link>
+          </li>
+          <li className="mb-2">
+            <Link to="/login" className="text-white hover:underline">
+              Talk to us
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div className="flex-1">
+        <h2 className="text-white font-medium">Social Links</h2>
+        <ul className="list-none p-0 mt-4">
+          <li className="mb-2">
+            <a
+              href="https://www.youtube.com"
+              className="text-white flex items-center hover:underline"
             >
-              Submit
-            </button>
-          </form>
-        </div>
-      </footer>
-    </>
+              <i className="ri-youtube-fill mr-2"></i>
+              Youtube
+            </a>
+          </li>
+          <li className="mb-2">
+            <a
+              href="https://www.facebook.com/"
+              className="text-white flex items-center hover:underline"
+            >
+              <i className="ri-facebook-circle-fill mr-2"></i>
+              Facebook
+            </a>
+          </li>
+          <li className="mb-2">
+            <a
+              href="https://www.instagram.com"
+              className="text-white flex items-center hover:underline"
+            >
+              <i className="ri-instagram-fill mr-2"></i>
+              Instagram
+            </a>
+          </li>
+          <li className="mb-2">
+            <a
+              href="https://www.linkedin.com/in/imran-patel83"
+              className="text-white flex items-center hover:underline"
+            >
+              <i className="ri-linkedin-box-fill mr-2"></i>
+              Linkedin
+            </a>
+          </li>
+          <li className="mb-2">
+            <a
+              href="https://github.com/imran95patel"
+              className="text-white flex items-center hover:underline"
+            >
+              <i className="ri-github-fill mr-2"></i>
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div className="flex-1">
+        <h2 className="text-white font-medium">Enquiry</h2>
+        <form className="mt-4 flex flex-col gap-4">
+          <input
+            name="fullName"
+            placeholder="Full Name"
+            type="text"
+            required
+            className="border-none p-3 rounded-lg"
+          />
+          <input
+            name="email"
+            placeholder="example@example.com"
+            type="email"
+            required
+            className="border-none p-3 rounded-lg"
+          />
+          <textarea
+            name="message"
+            placeholder="Message"
+            required
+            className="border-none p-3 rounded-lg"
+          />
+          <button
+            type="submit"
+            className="bg-green-500 text-white py-3 px-6 rounded-lg hover:bg-green-600 transition-colors"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </footer>
   );
 };
 
